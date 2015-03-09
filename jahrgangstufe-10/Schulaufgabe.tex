@@ -1,0 +1,103 @@
+\documentclass[11pt,a4paper]{scrartcl}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{multienum}
+\usepackage[ngerman]{babel}
+
+\author{Klasse 10b}
+\title{2. Schulaufgabe im Fach Mathematik}
+\date {\today}
+
+\begin{document}
+\maketitle
+
+\paragraph{Aufgabe}
+Der nebenstehende Axialschnitt zeigt den Entwurf eines kleinen Sportpokals. (Drehkörper).\\
+Es gilt:\\
+\begin{gather}
+\overline{FD} = \overline{AD} = 2cm\\
+\overline{BN} = 3cm\\
+\overline{GN} = 2cm\\
+\overline{NJ} = \overline{LK} = 0,8cm\\
+\overline{OH} = \overline{EB}\\
+\overline{GO} = 1,2cm
+\end{gather}
+
+\begin{tikzpicture}[
+	cross/.style={
+		draw,
+		cross out,
+		minimum size=2*(#1-1pt),
+		inner sep=0pt,
+		outer sep=0pt
+		},
+	x=.5cm,
+	y=.5cm
+	]
+   %Raster zeichnen
+   \draw [color=gray!50]  [step=5mm] (-11,-10) grid (11,10);
+   
+   % Achsen zeichnen
+   \draw[->,thick] (-10,0) -- (10,0) node[right] {$x$};
+   \draw[->,thick] (0,-9) -- (0,9) node[above] {$y$};
+   
+   % Achsen beschriften
+   \foreach \x in {-1,0,1,2,5}
+   \draw (\x,-.1) -- (\x,.1) node[below=4pt] {$\scriptstyle\x$};
+   \foreach \y in {-1,0,1,2,5}
+   \draw (-.1,\y) -- (.1,\y) node[left=4pt] {$\scriptstyle\y$};
+    %Funktionen zeichnen:
+    \clip(-11,-9) rectangle (11,9);
+    \draw[smooth, domain=-9:9] plot (\x, {2*pow(\x-3,2)-3}) node at (6,8) {$p_1$};  
+    \draw[smooth] plot (\x, {-1*pow(\x-3,2)+1}) node[right] {$p_2$};  
+    \draw[smooth, domain=-9:9] plot (\x, {-0.4*pow(\x+3,2)+1})
+        node at (2.5,-8) {$p_4$};           
+\end{tikzpicture} 
+
+\paragraph{Aufgabe 1}
+Bestimme die Unbekannte x!
+
+\renewcommand{\regularlisti}{\setcounter{multienumi}{0}%
+\renewcommand{\labelenumi}
+{\addtocounter{multienumi}{1}\alph{multienumi})}}
+
+\begin{multienumerate}
+\mitemxx{$\frac{3-x}{7}=23$}{$24x-43,5=\frac{23}{2-5}$}
+\mitemxx{$x^2-2=x^2-7x+3$}{$134-76/3=\frac{34}{4-67x}$}
+\end{multienumerate}
+
+
+\begin{flushright}
+Punkte(\_\_\_\_/4)
+\end{flushright}
+
+\paragraph{Aufgabe 2}
+Bestimme die Unbekannte x!
+
+%\begin{multienumerate}
+%\mitemxx{$3x-7=5$}{$4x+5=2$}
+%\end{multienumerate}
+\begin{align*}
+3x-7=5\\
+4x+5=2\\
+x-4=3-2\\
+\end{align*}
+
+\paragraph{Aufgabe 3}
+Irgendwann werd ich schon die passende Formierung finden
+\begin{align*}
+\text{a)} 3x-7&=4 & 34-3x& =7&
+b)a_{12}& =b_{12}\\
+c)a_{21}& =b_{21}&
+d)a_{22}& =b_{22}+c_{22}
+\end{align*}
+
+\begin{align*}
+x&=y & X&=Y & a&=b+c\\
+a) 3x-5&=3 &45x-6x-8&=34x & 4-5x&=4x-3\\
+\end{align*}
+
+\end{document}
